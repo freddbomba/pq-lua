@@ -1,14 +1,24 @@
-a=1.4
-b=0.3
-x=-1.0
-x1=-1.0
+
+function henonN(alpha,beta,x0,x1,N)
+  -- alpha=1.9231
+  -- beta=-0.1332
+  -- x0=0.35
+  -- y0=0.9837
+  -- N=100
+  -- takes Nth value of a Henon map with those parameters
 x2=0
-i = 50
-while (i>=0)
-do
-  x2=1-a*x^2+b*x1
-  print(x2,"\n")
-  x1=x
-  x=x2
-  i=i-1
+x1=0
+  for i=0,N do
+  print ("value after  ",i," cicli  e' ",x1)
+    if ( x2>2e+30 or x2<-2e+30) then
+      print ("escapes to infinity after ", i, " iteratons", " use ", x1)
+      return
+    end
+    x2=1-alpha*x0^2+beta*x1
+    x1=x0
+    x0=x2
+  end
+  print ("================================")
+  print ("value after  ",N," cicli  e' ",x1)
 end
+print(henonN(-0.911,0.333,0,0,20),"\t",N)
