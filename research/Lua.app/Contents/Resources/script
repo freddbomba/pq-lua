@@ -1,0 +1,8 @@
+#!/bin/sh
+
+#DEFAULT=';;'
+
+export PATH=.:$PATH
+export LUA_CPATH='lib/?.so'"$DEFAULT"
+export LUA_PATH='lib/lua/?.lua'"$DEFAULT"
+exec lua -v "$@"

@@ -15,7 +15,7 @@ class 'boid'
 		self.wander = rVec2()
 
 		self.s = rSpriteImage(tm:loadTexture("b0" .. F_RNG:rand(1,2,3,4,5) .. ".png"))
---		self.s = rSpriteImage(tm:loadTexture("agent.png"))
+		self.s = rSpriteImage(tm:loadTexture("agent.png"))
 		self.s:setPos(self.p)
 		self.s:setScale(0)
 		self.s.color:setRGBA(1,1,1,0.15)

@@ -12,6 +12,7 @@ class 'logic'
 		trace("logic:init()")
 
 		-- global RNG
+		-- to be changed with deterministic random file logic
 		dofile("rng.lua")
 
 		F_RNG = rng()
@@ -311,7 +312,9 @@ class 'logic'
 
 -- adding printing (fredd)
 		if(key == "p") then
-			 os.execute('screencapture -t pdf ~/Desktop/frame000.pdf')
+			timestamp = math.random()
+			command = "screencapture -t png ~/Desktop/tmp/frame000"..timestamp..".png"
+			os.execute(command)
  			-- os.execute('lpr pdfshot.pdf')
 		end
 
